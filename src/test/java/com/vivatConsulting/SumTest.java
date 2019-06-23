@@ -10,6 +10,6 @@ public class SumTest {
 
 //    @Test(expected = NegativeNumberException.class)
 //    public void initialsBlankInput() {
-//        Sum.main( < 0);
+//        Sum.main(n < 0);
 //    }
 }
