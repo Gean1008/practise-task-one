@@ -16,32 +16,29 @@ public class Sum {
             try {
                 numbers.checkNumber(n);
             }
-//            catch (InputMismatchException e) {
-//                System.err.println("\nНужно вводить целые числа\nПопробуйте ещё");
-//                n = -1;
-//            }
-            catch (NegativeNumberException e1) {
-                System.err.println(e1);
+            catch (NegativeNumberException e) {
+                System.err.println(e);
             }
         }
-        int[] list = new int[n];
+        Object[] list = new Object[n];
 
 
         System.out.println("Введите маccив целых чисел:");
         for(int i = 0; i < list.length; i++) {
-//            try{
-                list[i] = input.nextInt();
-//            }
-//            catch (InputMismatchException e){
-//                System.err.println("\nНужно вводить целые числа\nПопробуйте ещё");
-//                list[i] = input.nextInt();
-//            }
+            list[i] = input.next();
+            try{
+                numbers.checkType(list[i]);
+            }
+            catch (TypeException e1){
+                System.err.println(e1);
+                i--;
+            }
         }
 
         int sum = 0;
         for(int i = 0; i < list.length; i++){
             System.out.print(list[i]+" ");
-            sum += list[i];
+            sum += (int)list[i];
         }
         System.out.println("\nСумма элементов массива равна: " + sum);
 
